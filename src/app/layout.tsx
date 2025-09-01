@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import TheNavbar from '@/components/TheNavbar';
+import TheFooter from '@/components/TheFooter';
+import LenisProvider from '../providers/LenisProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <LenisProvider>
+          <TheNavbar />
+          {children}
+          <TheFooter />
+        </LenisProvider>
+      </body>
     </html>
   );
 }
