@@ -54,7 +54,7 @@ const SomethingAboutCirco = () => {
   return (
     <section className="relative section-wrapper-2">
       <div className="min-h-screen bg-[url('/images/background-placeholder.jpg')] bg-cover bg-no-repeat bg-center bg-wrapper mx-auto">
-        <div className="absolute inset-0 flex items-center justify-center text-[50px] md:text-[90px] font-medium text-[#FCBFBF] leading-14 md:leading-28 text-center max-w-3xl mx-auto section-heading">
+        <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-[90px] font-medium text-[#FCBFBF] leading-14 md:leading-28 text-center max-w-3xl mx-auto section-heading">
           Something about Circo for everybody
         </div>
       </div>

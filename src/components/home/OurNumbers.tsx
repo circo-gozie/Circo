@@ -218,7 +218,7 @@ const OurNumbers = () => {
       tl.to(
         '.description',
         {
-          y: -240,
+          y: -80,
           duration: 0.3
         },
         4
@@ -236,28 +236,17 @@ const OurNumbers = () => {
       tl.to(
         '.description',
         {
-          y: -360,
+          y: -120,
           duration: 0.3
         },
         5
       );
     }
-
-    // tl.to(
-    //   '.figures',
-    //   {
-    //     opacity: 0,
-    //     scale: 15,
-    //     duration: 3,
-    //     y: 300
-    //   },
-    //   6
-    // );
   });
 
   return (
     <section className="min-h-screen md:flex items-center justify-center relative overflow-hidden section-wrapper">
-      <div className="text-[#1B1B1B] text-[55px] md:text-[122px] md:flex items-center gap-3 text-center py-28 md:py-0">
+      <div className="text-[#1B1B1B] text-[55px] md:text-[122px] lg:flex items-center gap-3 text-center py-28 md:py-0">
         <h2 className="left-text">“Social”</h2>
         {Array.from({ length: 8 }).map((_, index) => (
           // eslint-disable-next-line @next/next/no-img-element
