@@ -16,7 +16,13 @@ const OurNumbers = () => {
   useGSAP(() => {
     let radius: number;
     let exitDistance: number;
-    if (window.innerWidth >= 768) {
+
+    if (window.innerWidth > 1440) {
+      radius = 400; // px
+      exitDistance = 420; // px
+    }
+
+    if (window.innerWidth >= 768 && window.innerWidth <= 1440) {
       radius = 300; // px
       exitDistance = 320; // px
     }
@@ -37,7 +43,35 @@ const OurNumbers = () => {
       }
     });
 
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 1440) {
+      tl.to(
+        '.left-text',
+        {
+          x: -920,
+          duration: 1
+        },
+        0
+      ).to(
+        '.right-text',
+        {
+          x: 990,
+          duration: 1
+        },
+        0
+      );
+
+      tl.from(
+        '.circle-img',
+        {
+          opacity: 0,
+          scale: 0.5,
+          duration: 1
+        },
+        0
+      );
+    }
+
+    if (window.innerWidth >= 768 && window.innerWidth <= 1440) {
       tl.to(
         '.left-text',
         {

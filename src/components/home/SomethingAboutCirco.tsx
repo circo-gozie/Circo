@@ -28,7 +28,7 @@ const SomethingAboutCirco = () => {
           end: '+=500',
           scrub: 1
         },
-        y: 550,
+        y: '62vh',
         fontSize: '3.75rem',
         lineHeight: '4.75rem',
         color: '#1B1B1B',
@@ -44,7 +44,7 @@ const SomethingAboutCirco = () => {
           end: '+=500',
           scrub: 1
         },
-        y: 480,
+        y: '62vh',
         fontSize: '2.25rem',
         lineHeight: '3.5rem',
         maxWidth: '20.875rem'

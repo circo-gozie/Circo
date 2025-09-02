@@ -36,7 +36,7 @@ const PressRelease = () => {
               height={146}
               width={390}
             />
-            <p className="text-[#1B1B1B] text-base md:text-lg lg:text-2xl text-center font-semibold lg:leading-8 tracking-[-2%] px-10">
+            <p className="text-[#1B1B1B] text-base md:text-lg lg:text-2xl text-center font-semibold lg:leading-8 tracking-[-2%] px-8">
               {article.title}
             </p>
           </div>
