@@ -282,15 +282,15 @@ const OurNumbers = () => {
     <section className="min-h-screen md:flex items-center justify-center relative overflow-hidden section-wrapper">
       <div className="text-[#1B1B1B] text-[55px] md:text-[122px] lg:flex items-center gap-3 text-center py-28 md:py-0">
         <h2 className="left-text">“Social”</h2>
-        {Array.from({ length: 8 }).map((_, index) => (
+        {images.map((_, index) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             key={index}
             ref={(el) => {
               imgRefs.current[index] = el;
             }}
-            src="/images/placeholder-image.jpg"
-            alt="Placeholder"
+            src={`https://assets.circleandclique.com/artifacts/images/social_${index + 1}.jpg`}
+            alt="images"
             className="circle-img"
             style={{
               position: 'absolute',

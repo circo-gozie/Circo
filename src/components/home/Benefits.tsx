@@ -9,7 +9,7 @@ const Benefits = () => {
         <div className="flex gap-6 flex-col md:flex-row-reverse items-center justify-between">
           <div className="md:w-1/2">
             <Image
-              src="/images/benefit-image-1.png"
+              src="https://assets.circleandclique.com/artifacts/images/creators_home_image.png"
               className="ml-auto"
               alt="Benefit 1"
               width={576}
@@ -33,7 +33,7 @@ const Benefits = () => {
         <div className="flex gap-6 flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2">
             <Image
-              src="/images/benefit-image-2.png"
+              src="https://assets.circleandclique.com/artifacts/images/viewers_home_image.png"
               alt="Benefit 2"
               width={449}
               height={463}

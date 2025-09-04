@@ -3,17 +3,17 @@ import Image from 'next/image';
 const PressRelease = () => {
   const articles = [
     {
-      image: '/images/tech-cabal.png',
+      image: 'https://assets.circleandclique.com/artifacts/images/Tech_cabal.png',
       alt: 'Tech Cabal',
       title: 'Rewriting the creator’s economy playbook'
     },
     {
-      image: '/images/c2pa.png',
+      image: 'https://assets.circleandclique.com/artifacts/images/C2PA.png',
       alt: 'C2PA',
       title: 'Advancing digital content transparency and authenticity'
     },
     {
-      image: '/images/c2pa.png',
+      image: 'https://assets.circleandclique.com/artifacts/images/Stores.png',
       alt: 'aaaa',
       title: '4.5 Rating across stores'
     }
@@ -29,13 +29,15 @@ const PressRelease = () => {
             key={article.alt}
             className="space-y-4.5 md:space-y-6 lg:space-y-8"
           >
-            <Image
-              src={article.image}
-              alt={article.alt}
-              className="w-full"
-              height={146}
-              width={390}
-            />
+            <div className="bg-[#F4F4F6] h-36 flex items-center justify-center">
+              <Image
+                src={article.image}
+                alt={article.alt}
+                className="w-full"
+                height={86}
+                width={286}
+              />
+            </div>
             <p className="text-[#1B1B1B] text-base md:text-lg lg:text-2xl text-center font-semibold lg:leading-8 tracking-[-2%] px-8">
               {article.title}
             </p>
