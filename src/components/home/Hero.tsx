@@ -1,6 +1,20 @@
+'use client';
+
 import Button from '../ui/Button';
+import { scrollToDownload } from '@/utils/scrollTo';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
+  const router = useRouter();
+
+  const handleDownload = () => {
+    if (window.innerWidth < 768) {
+      router.push('https://circo.onelink.me/gP9j/16kig3qf');
+    } else {
+      scrollToDownload();
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -23,6 +37,7 @@ const Hero = () => {
         <Button
           variant="secondary"
           className="w-full md:w-auto mt-7 md:mt-8"
+          onClick={handleDownload}
         >
           Download the App
         </Button>

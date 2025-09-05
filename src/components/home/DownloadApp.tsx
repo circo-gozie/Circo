@@ -1,7 +1,20 @@
+'use client';
+
 import Image from 'next/image';
 import Icon from '../ui/Icon';
+import { useRouter } from 'next/navigation';
 
 const DownloadApp = () => {
+  const router = useRouter();
+
+  const goToAppleStore = () => {
+    router.push('https://apps.apple.com/ng/app/circo-discover-create-earn/id6478199110');
+  };
+
+  const goToGooglePlay = () => {
+    router.push('https://play.google.com/store/search?q=circo&c=apps&hl=en');
+  };
+
   return (
     <section
       id="download"
@@ -40,14 +53,20 @@ const DownloadApp = () => {
           </div>
 
           <div className="mt-11 flex md:hidden flex-wrap justify-center gap-3">
-            <div className="bg-white flex items-center gap-1 rounded-full py-5 px-7">
+            <div
+              className="bg-white flex items-center gap-1 rounded-full py-5 px-7 cursor-pointer"
+              onClick={goToAppleStore}
+            >
               <Icon
                 name="apple-black"
                 size={4}
               />
               <p className="text-sm text-[#1B1B1B] tracking-[-3%]">Get it on iPhone</p>
             </div>
-            <div className="bg-white flex items-center gap-1 rounded-full py-5 px-7">
+            <div
+              className="bg-white flex items-center gap-1 rounded-full py-5 px-7 cursor-pointer"
+              onClick={goToGooglePlay}
+            >
               <Icon
                 name="android-black"
                 size={4}

@@ -1,7 +1,21 @@
+'use client';
+
 import Image from 'next/image';
 import Button from '../ui/Button';
+import { scrollToDownload } from '@/utils/scrollTo';
+import { useRouter } from 'next/navigation';
 
 const Benefits = () => {
+  const router = useRouter();
+
+  const handleDownload = () => {
+    if (window.innerWidth < 768) {
+      router.push('https://circo.onelink.me/gP9j/16kig3qf');
+    } else {
+      scrollToDownload();
+    }
+  };
+
   return (
     <>
       <div className="h-24 md:h-36 bg-[#000000] md:bg-white"></div>
@@ -26,7 +40,12 @@ const Benefits = () => {
             <h3 className="text-[32px] md:text-5xl lg:text-[60px] leading-13 md:leading-15 lg:leading-18.5 tracking-normal text-white md:text-[#1B1B1B]">
               Complete Creative Control to turn your passion into business
             </h3>
-            <Button className="mt-7 md:mt-11">Create on your terms</Button>
+            <Button
+              className="mt-7 md:mt-11"
+              onClick={handleDownload}
+            >
+              Create on your terms
+            </Button>
           </div>
         </div>
 
@@ -49,7 +68,12 @@ const Benefits = () => {
             <h3 className="text-[32px] md:text-5xl lg:text-[60px] leading-13 md:leading-15 lg:leading-18.5 tracking-normal text-white md:text-[#1B1B1B]">
               Find trends, content, and topics that inspire you.
             </h3>
-            <Button className="mt-7 md:mt-11">Explore content you love</Button>
+            <Button
+              className="mt-7 md:mt-11"
+              onClick={handleDownload}
+            >
+              Explore content you love
+            </Button>
           </div>
         </div>
       </section>

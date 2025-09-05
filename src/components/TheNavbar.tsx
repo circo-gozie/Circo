@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from './ui/Button';
+import { scrollToDownload } from '@/utils/scrollTo';
 
 const TheNavbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -63,7 +64,7 @@ const TheNavbar = () => {
 
           <div className="flex items-center gap-4">
             <div className="hidden md:block">
-              <Button>Download the App</Button>
+              <Button onClick={scrollToDownload}>Download the App</Button>
             </div>
           </div>
         </div>
