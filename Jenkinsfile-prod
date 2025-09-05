@@ -1,0 +1,140 @@
+pipeline {
+    agent any
+    
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
+        AWS_REGION           = credentials('aws-region')
+        AWS_ACCOUNT_ID       = credentials('aws-account-id')
+        EC2_SSH_PRIVATE_KEY  = credentials('prod-ssh-private-key')
+        EC2_USER             = credentials('ec2-user')
+        EC2_HOST             = credentials('prod-ec2-host')
+        SONAR_KEY            = credentials('sonar-pat')
+        SONAR_HOST_URL       = credentials('sonar-host-url')
+    }
+
+    stages {
+        stage('Checkout/Clone Repository') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Copy ENV File') {
+            steps {
+                script {
+                    withCredentials([file(credentialsId: 'prod-ui-env', variable: 'ENV_FILE')]) {
+                        sh """
+                            # Copy the env file to the working directory
+                            cp "\$ENV_FILE" .env
+                        """
+                    }
+                }
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'yarn install'
+            }
+        }
+
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         script {
+        //             def scannerHome = tool 'SonarScanner'
+        //             withSonarQubeEnv('Sonarqube') {
+        //                 sh """
+        //                     ${scannerHome}/bin/sonar-scanner \
+        //                     -Dsonar.projectKey=prod-circo-web \
+        //                     -Dsonar.sources=. \
+        //                     -Dsonar.host.url=${SONAR_HOST_URL} \
+        //                     -Dsonar.login=${SONAR_KEY}
+        //                 """
+        //             }
+        //         }
+        //     }
+        // }
+
+        // stage("Quality Gate") {
+        //     steps {
+        //         timeout(time: 1, unit: 'HOURS') {
+        //             script {
+        //                 def qg = waitForQualityGate()
+        //                 if (qg.status != 'OK') {
+        //                     error("Pipeline aborted due to quality gate failure: ${qg.status}")
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        stage('Build Application') {
+            steps {
+                sh 'yarn build'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh """
+                        docker build --build-arg ENV_FILE=./.env -t prod-circo-web .
+                    """
+                }
+            }
+        }
+
+        stage('Push to ECR') {
+            steps {
+                script {
+                    def versionTag = "1.0.${BUILD_NUMBER}"
+                    def ecrRepo = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/prod-circo-web"
+                    
+                    sh """
+                        # Login to ECR
+                        aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
+
+                        # Tag with both version number and latest
+                        docker tag prod-circo-web:latest ${ecrRepo}:${versionTag}
+                        docker tag prod-circo-web:latest ${ecrRepo}:latest
+
+                        # Push both tags
+                        docker push ${ecrRepo}:${versionTag}
+                        docker push ${ecrRepo}:latest
+
+                        # Clean up local images
+                        docker rmi prod-circo-web:latest ${ecrRepo}:${versionTag} ${ecrRepo}:latest
+                        
+                        # Output version information for logging
+                        echo "Successfully pushed version ${versionTag} and latest tags to ECR"
+                    """
+                }
+            }
+        }
+
+        stage('Deploy to EC2') {
+            steps {
+                script {
+                    sh 'cp $EC2_SSH_PRIVATE_KEY ec2_key.pem'
+                    sh 'chmod 400 ec2_key.pem'
+
+                    sh """
+                        ssh -T -o StrictHostKeyChecking=no -i ec2_key.pem ${EC2_USER}@${EC2_HOST} << EOSSH
+                            cd /home/ubuntu/prod-circo/prod-circo-web
+                            sudo ./deploy.sh
+EOSSH
+                    """                   
+                    // Clean up key file
+                    sh 'rm -f ec2_key.pem'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
