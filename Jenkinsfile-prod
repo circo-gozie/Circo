@@ -20,66 +20,11 @@ pipeline {
             }
         }
 
-        stage('Copy ENV File') {
-            steps {
-                script {
-                    withCredentials([file(credentialsId: 'prod-ui-env', variable: 'ENV_FILE')]) {
-                        sh """
-                            # Copy the env file to the working directory
-                            cp "\$ENV_FILE" .env
-                        """
-                    }
-                }
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'yarn install'
-            }
-        }
-
-        // stage('SonarQube Analysis') {
-        //     steps {
-        //         script {
-        //             def scannerHome = tool 'SonarScanner'
-        //             withSonarQubeEnv('Sonarqube') {
-        //                 sh """
-        //                     ${scannerHome}/bin/sonar-scanner \
-        //                     -Dsonar.projectKey=prod-circo-web \
-        //                     -Dsonar.sources=. \
-        //                     -Dsonar.host.url=${SONAR_HOST_URL} \
-        //                     -Dsonar.login=${SONAR_KEY}
-        //                 """
-        //             }
-        //         }
-        //     }
-        // }
-
-        // stage("Quality Gate") {
-        //     steps {
-        //         timeout(time: 1, unit: 'HOURS') {
-        //             script {
-        //                 def qg = waitForQualityGate()
-        //                 if (qg.status != 'OK') {
-        //                     error("Pipeline aborted due to quality gate failure: ${qg.status}")
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-
-        stage('Build Application') {
-            steps {
-                sh 'yarn build'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 script {
                     sh """
-                        docker build --build-arg ENV_FILE=./.env -t prod-circo-web .
+                        docker build -t prod-circo-web .
                     """
                 }
             }
