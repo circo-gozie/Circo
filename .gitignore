@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
++.github/  # (already listed above; keep only once)
+
++# Ignore environment files (avoid baking secrets into images)
++.env
++.env.*
++!.env.example
