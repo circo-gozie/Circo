@@ -28,7 +28,7 @@ const SomethingAboutCirco = () => {
           end: '+=500',
           scrub: 1
         },
-        y: 550,
+        y: '62vh',
         fontSize: '3.75rem',
         lineHeight: '4.75rem',
         color: '#1B1B1B',
@@ -44,7 +44,7 @@ const SomethingAboutCirco = () => {
           end: '+=500',
           scrub: 1
         },
-        y: 480,
+        y: '62vh',
         fontSize: '2.25rem',
         lineHeight: '3.5rem',
         maxWidth: '20.875rem'
@@ -53,10 +53,19 @@ const SomethingAboutCirco = () => {
   });
   return (
     <section className="relative section-wrapper-2">
-      <div className="min-h-screen bg-[url('/images/background-placeholder.jpg')] bg-cover bg-no-repeat bg-center bg-wrapper mx-auto">
-        <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-[90px] font-medium text-[#FCBFBF] leading-14 md:leading-28 text-center max-w-3xl mx-auto section-heading">
+      <div className="min-h-screen bg-wrapper mx-auto relative">
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://assets.circleandclique.com/artifacts/videos/Circo_for_everybody.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-[90px] font-medium text-[#FCBFBF] leading-14 md:leading-28 text-center max-w-3xl mx-auto section-heading z-10">
           Something about Circo for everybody
         </div>
+        <div className="absolute inset-0 bg-black opacity-40 z-5 pointer-events-none"></div>
       </div>
     </section>
   );

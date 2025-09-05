@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Icon from './ui/Icon';
 
 const TheFooter = () => {
   const navs = [
@@ -32,29 +33,27 @@ const TheFooter = () => {
           href: ''
         }
       ]
-    },
-    {
-      category: 'Connect',
-      children: [
-        {
-          name: 'LinkedIn',
-          href: ''
-        },
-        {
-          name: 'YouTube',
-          href: ''
-        },
-        {
-          name: 'Instagram',
-          href: ''
-        },
-        {
-          name: 'X',
-          href: ''
-        }
-      ]
     }
   ];
+  const socials = [
+    {
+      name: 'linkedIn',
+      href: ''
+    },
+    {
+      name: 'youtube',
+      href: ''
+    },
+    {
+      name: 'instagram',
+      href: ''
+    },
+    {
+      name: 'x',
+      href: ''
+    }
+  ];
+
   return (
     <footer className="bg-[#040404] py-10">
       <div className="max-w-screen-xl mx-auto px-5 md:flex justify-between">
@@ -90,6 +89,22 @@ const TheFooter = () => {
             </div>
           </div>
         ))}
+        <div className="tracking-[-3%] mb-12">
+          <span className="text-[#B0B0B0]">Connect</span>
+          <div className="mt-7.5 md:mt-6 flex gap-7">
+            {socials.map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+              >
+                <Icon
+                  name={social.name}
+                  size={4.5}
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );

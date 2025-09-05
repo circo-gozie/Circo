@@ -62,9 +62,8 @@ const TheNavbar = () => {
           </Link>
 
           <div className="flex items-center gap-4">
-            <button className="text-white font-semibold text-base py-4.5 px-11 hidden md:block">Sign In</button>
             <div className="hidden md:block">
-              <Button>Create Account</Button>
+              <Button>Download the App</Button>
             </div>
           </div>
         </div>

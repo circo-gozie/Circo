@@ -12,7 +12,7 @@ const DownloadApp = () => {
           <div className="mt-8 hidden md:flex justify-center gap-7">
             <div>
               <Image
-                src="/images/qr-code-iphone.png"
+                src="https://assets.circleandclique.com/artifacts/images/qr_code_iphone.png"
                 alt="qr-code-iphone"
                 height={186}
                 width={186}
@@ -24,7 +24,7 @@ const DownloadApp = () => {
             </div>
             <div>
               <Image
-                src="/images/qr-code-android.png"
+                src="https://assets.circleandclique.com/artifacts/images/qr_code_android.png"
                 alt="qr-code-android"
                 height={186}
                 width={186}

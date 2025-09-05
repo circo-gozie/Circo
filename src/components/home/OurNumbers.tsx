@@ -16,7 +16,13 @@ const OurNumbers = () => {
   useGSAP(() => {
     let radius: number;
     let exitDistance: number;
-    if (window.innerWidth >= 768) {
+
+    if (window.innerWidth > 1440) {
+      radius = 400; // px
+      exitDistance = 420; // px
+    }
+
+    if (window.innerWidth >= 768 && window.innerWidth <= 1440) {
       radius = 300; // px
       exitDistance = 320; // px
     }
@@ -37,7 +43,35 @@ const OurNumbers = () => {
       }
     });
 
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 1440) {
+      tl.to(
+        '.left-text',
+        {
+          x: -920,
+          duration: 1
+        },
+        0
+      ).to(
+        '.right-text',
+        {
+          x: 990,
+          duration: 1
+        },
+        0
+      );
+
+      tl.from(
+        '.circle-img',
+        {
+          opacity: 0,
+          scale: 0.5,
+          duration: 1
+        },
+        0
+      );
+    }
+
+    if (window.innerWidth >= 768 && window.innerWidth <= 1440) {
       tl.to(
         '.left-text',
         {
@@ -248,15 +282,15 @@ const OurNumbers = () => {
     <section className="min-h-screen md:flex items-center justify-center relative overflow-hidden section-wrapper">
       <div className="text-[#1B1B1B] text-[55px] md:text-[122px] lg:flex items-center gap-3 text-center py-28 md:py-0">
         <h2 className="left-text">“Social”</h2>
-        {Array.from({ length: 8 }).map((_, index) => (
+        {images.map((_, index) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             key={index}
             ref={(el) => {
               imgRefs.current[index] = el;
             }}
-            src="/images/placeholder-image.jpg"
-            alt="Placeholder"
+            src={`https://assets.circleandclique.com/artifacts/images/social_${index + 1}.jpg`}
+            alt="images"
             className="circle-img"
             style={{
               position: 'absolute',

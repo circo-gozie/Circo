@@ -8,7 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variants: Record<Variant, string> = {
-  primary: 'bg-gradient-to-r from-[#AE0C4D] via-[#CD1942] to-[#FF2F2F] text-white hover:bg-red-700',
+  primary: 'circo-gradient text-white hover:bg-red-700',
   secondary: 'bg-white text-[#1B1B1B]'
 };
 
