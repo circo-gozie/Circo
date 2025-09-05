@@ -9,8 +9,6 @@ pipeline {
         EC2_SSH_PRIVATE_KEY  = credentials('sandbox-ssh-private-key')
         EC2_USER             = credentials('ec2-user')
         EC2_HOST             = credentials('sandbox-ec2-host')
-        SONAR_KEY            = credentials('sonar-pat')
-        SONAR_HOST_URL       = credentials('sonar-host-url')
     }
 
     stages {

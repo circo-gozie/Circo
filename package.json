@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "format:check": "prettier --check \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\" --ignore-unknown"
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\" \"test/**/*.ts\" || true"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

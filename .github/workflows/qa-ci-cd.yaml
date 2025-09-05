@@ -25,15 +25,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Install pnpm globally
-        run: npm install -g pnpm
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build application
-        run: pnpm build
-
       - name: Build Docker image
         run: |
           docker build -t qa-circo-web .
