@@ -38,19 +38,19 @@ const TheFooter = () => {
   const socials = [
     {
       name: 'linkedIn',
-      href: ''
+      href: 'https://www.linkedin.com/company/circo-africa/'
     },
     {
       name: 'youtube',
-      href: ''
+      href: 'https://www.youtube.com/@CircoAfricaapp'
     },
     {
       name: 'instagram',
-      href: ''
+      href: 'https://www.instagram.com/circo.live_'
     },
     {
       name: 'x',
-      href: ''
+      href: 'https://x.com/circo_live'
     }
   ];
 
