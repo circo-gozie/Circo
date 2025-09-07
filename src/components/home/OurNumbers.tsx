@@ -312,17 +312,17 @@ const OurNumbers = () => {
         <div>
           <div className="h-24 md:h-43.5 overflow-hidden">
             <div className="text-[75px] md:text-[145px] font-semibold text-[#1B1B1B] value">
-              <p>100,000 +</p>
-              <p>$25,000 +</p>
-              <p>15,000 +</p>
-              <p>$25,000 +</p>
+              <p>100,000+</p>
+              <p>$25,000+</p>
+              <p>5,000+</p>
+              <p>$30,000+</p>
             </div>
           </div>
 
           <div className="h-9 md:h-18 overflow-hidden mt-2">
             <div className="text-[26px] md:text-[40px] font-medium text-[#747474] description">
               <div>Users reached weekly</div>
-              <div>Gifted to Creators</div>
+              <div>Gifted to Creators weekly</div>
               <div>Creator Ecosystem</div>
               <div>Paid Out</div>
             </div>
