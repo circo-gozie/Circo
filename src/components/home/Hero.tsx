@@ -30,13 +30,13 @@ const Hero = () => {
       />
 
       <div className="relative z-10 sm:text-center">
-        <h1 className="text-white text-[55px] sm:text-[80px] leading-18 sm:leading-23 tracking-normal font-semibold sm:font-medium">
+        <h1 className="text-white text-5xl sm:text-[80px] leading-16 sm:leading-23 tracking-normal font-semibold sm:font-medium">
           The Internet&apos;s Most Valuable Stage <br className="hidden sm:block" /> - Yours.
         </h1>
 
         <Button
           variant="secondary"
-          className="w-full md:w-auto mt-7 md:mt-8"
+          className="w-full sm:w-auto mt-7 sm:mt-8"
           onClick={handleDownload}
         >
           Download the App
