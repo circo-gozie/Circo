@@ -75,14 +75,14 @@ const OurNumbers = () => {
       tl.to(
         '.left-text',
         {
-          x: -720,
+          x: -740,
           duration: 1
         },
         0
       ).to(
         '.right-text',
         {
-          x: 790,
+          x: 820,
           duration: 1
         },
         0
