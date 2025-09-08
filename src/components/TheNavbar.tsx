@@ -49,14 +49,14 @@ const TheNavbar = () => {
               <Image
                 src="/images/logo-icon-only.svg"
                 alt="Logo"
-                width={32}
+                width={54}
                 height={37}
               />
             ) : (
               <Image
                 src="/images/logo.svg"
                 alt="Logo"
-                width={112}
+                width={132}
                 height={37}
               />
             )}
