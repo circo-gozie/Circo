@@ -10,6 +10,10 @@ WORKDIR /app
 # Copy dependency files
 COPY package.json pnpm-lock.yaml ./
 
+# Create a .env file from the build argument
+ARG ENV_FILE
+COPY $ENV_FILE .env
+
 # Install dependencies
 RUN pnpm install --frozen-lockfile
 
