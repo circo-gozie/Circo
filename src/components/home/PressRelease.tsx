@@ -33,7 +33,7 @@ const PressRelease = () => {
               <Image
                 src={article.image}
                 alt={article.alt}
-                className="w-full"
+                // className="w-full"
                 height={86}
                 width={286}
               />
