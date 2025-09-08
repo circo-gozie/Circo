@@ -56,7 +56,7 @@ const SomethingAboutCirco = () => {
       <div className="min-h-screen bg-wrapper mx-auto relative">
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
-          src="https://assets.circleandclique.com/artifacts/videos/Circo_for_everybody.mp4"
+          src="https://assets.circleandclique.com/artifacts/videos/Circo_for_everybody.webm"
           autoPlay
           loop
           muted
