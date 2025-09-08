@@ -18,11 +18,24 @@ pipeline {
             }
         }
 
+        stage('Copy ENV File') {
+            steps {
+                script {
+                    withCredentials([file(credentialsId: 'sandbox-ui-env', variable: 'ENV_FILE')]) {
+                        sh """
+                            # Copy the env file to the working directory
+                            cp "\$ENV_FILE" .env
+                        """
+                    }
+                }
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
                     sh """
-                        docker build -t sandbox-circo-web .
+                        docker build --build-arg ENV_FILE=./.env -t sandbox-circo-web .
                     """
                 }
             }
