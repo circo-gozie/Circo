@@ -56,17 +56,19 @@ const TheFooter = () => {
 
   return (
     <footer className="bg-[#040404] py-10">
-      <div className="max-w-screen-xl mx-auto px-5 md:flex justify-between">
-        <div className="mb-14.5 md:mb-0 lg:pr-16">
+      <div className="max-w-screen-xl mx-auto px-5 md:flex gap-5 justify-between">
+        <div className="mb-14.5 md:mb-0 lg:pr-8">
           <Link href="/">
             <Image
               src="/images/logo.svg"
               alt="Logo"
-              width={112}
-              height={37}
+              width={210}
+              height={82}
             />
           </Link>
-          <p className="text-[#E0E0E0] tracking-[-3%] mt-5 md:mt-7.5">Experience like never before</p>
+          <p className="text-[#E0E0E0] tracking-[-3%] mt-5 md:mt-7.5 text-xl md:text-3xl">
+            Experience like never before
+          </p>
         </div>
 
         {navs.map((nav) => (
@@ -80,7 +82,7 @@ const TheFooter = () => {
                 <div key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white hover:text-[#FF2F2F] transition-colors duration-200 ease-in-out"
+                    className="text-white hover:text-[#FF2F2F] transition-colors duration-200 ease-in-out text-xl"
                   >
                     {link.name}
                   </Link>
@@ -99,7 +101,7 @@ const TheFooter = () => {
               >
                 <Icon
                   name={social.name}
-                  size={4.5}
+                  size={6}
                 />
               </Link>
             ))}
