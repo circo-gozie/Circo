@@ -64,13 +64,13 @@ export default function LegalPageLayout({ data, title, isLoading, hasError, isSu
   return (
     <div className="pt-32">
       <div className="flex flex-col px-3 md:flex-row md:px-8 lg:px-12 xl:px-14">
-        <div className="relative min-w-0 md:flex-[2] lg:flex-[35%] xl:flex-[1]">
+        {/* <div className="relative min-w-0 md:flex-[2] lg:flex-[35%] xl:flex-[1]">
           <PolicyScrollMenu
             menuItems={data ?? []}
             activeSection={activeSection}
             onScrollTo={scrollToSection}
           />
-        </div>
+        </div> */}
 
         <div className="md:flex-[3] lg:flex-[65%] xl:flex-[3]">
           <div className="my-5 px-3">
