@@ -1,0 +1,57 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - qa-testing
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Build Docker image
+        run: |
+          docker build -t qa-circo-web .
+
+      - name: Log in to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Tag Docker image
+        run: |
+          docker tag qa-circo-web ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/qa-circo-web:latest
+          docker tag qa-circo-web ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/qa-circo-web:${GITHUB_SHA::8}
+
+      - name: Push Docker image to ECR
+        run: |
+          docker push  --all-tags ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/qa-circo-web
+
+      - name: Deploy to EC2
+        env:
+          EC2_USER: ${{ secrets.EC2_USER }}
+          EC2_HOST: ${{ secrets.QA_EC2_HOST }}
+        run: |
+          set -euo pipefail
+          trap 'rm -f /tmp/ec2_key.pem' EXIT
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > /tmp/ec2_key.pem
+          chmod 400 /tmp/ec2_key.pem
+
+          ssh -o StrictHostKeyChecking=no -i /tmp/ec2_key.pem ${EC2_USER}@${EC2_HOST} << 'EOF'
+            cd /home/ubuntu/qa-circo/qa-circo-web/
+            sudo ./deploy.sh
+          EOF
