@@ -3,7 +3,7 @@ import Image from 'next/image';
 const PressRelease = () => {
   const articles = [
     {
-      image: 'https://assets.circleandclique.com/artifacts/images/Tech_cabal.png',
+      image: 'https://assets.circleandclique.com/artifacts/images/tech_cabal.png',
       alt: 'Tech Cabal',
       title: 'Rewriting the creator’s economy playbook'
     },

@@ -25,9 +25,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Create .env file
+        run: |
+          echo "${{ secrets.QA_ENV }}" >> .env
+
       - name: Build Docker image
         run: |
-          docker build -t qa-circo-web .
+          docker build --build-arg ENV_FILE=./.env -t qa-circo-web .
 
       - name: Log in to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
