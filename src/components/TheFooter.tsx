@@ -9,28 +9,28 @@ const TheFooter = () => {
       children: [
         {
           name: 'Privacy Policy',
-          href: ''
+          href: '/legal/privacy-policy'
         },
         {
           name: 'Terms & Conditions',
-          href: ''
+          href: '/legal/terms-and-conditions'
         },
         {
           name: 'Child Safety Policy',
-          href: ''
+          href: '/legal/child-safety-policy'
         }
       ]
     },
     {
       category: 'Resources',
       children: [
-        {
-          name: 'Help Center',
-          href: ''
-        },
+        // {
+        //   name: 'Help Center',
+        //   href: '/help-center'
+        // },
         {
           name: 'Community Guidelines',
-          href: ''
+          href: '/legal/community-guidelines'
         }
       ]
     }

@@ -38,4 +38,26 @@ body {
   .circo-gradient {
     background-image: linear-gradient(to right, #ae0c4d, #cd1942, #ff2f2f);
   }
+
+  /* Custom list styling for legal pages */
+  .custom-ul-class {
+    @apply list-disc pl-6 space-y-2;
+  }
+
+  .custom-ol-class {
+    @apply list-decimal pl-6 space-y-2;
+  }
+
+  .custom-li-class {
+    @apply leading-relaxed;
+  }
+
+  /* Circo brand colors */
+  .bg-circoRed2 {
+    background-color: #cd1942;
+  }
+
+  .bg-circoRed2\/20 {
+    background-color: rgba(205, 25, 66, 0.2);
+  }
 }
