@@ -18,7 +18,7 @@ const DownloadApp = () => {
     >
       <div className="max-w-screen-xl mx-auto px-8 bg-[url(https://assets.circleandclique.com/artifacts/images/red-radial-bg.png)] py-21 rounded-[60px] overflow-hidden flex justify-center">
         <div className="max-w-[600px] mx-auto">
-          <h2 className="text-white text-[76px] md:text-[64px] leading-22 md:leading-18 tracking-[-2%] text-center">
+          <h2 className="text-white text-[64px] leading-18 tracking-[-2%] text-center">
             Circo is where you want to be
           </h2>
           <div className="mt-6.5 hidden md:flex justify-center gap-7">
