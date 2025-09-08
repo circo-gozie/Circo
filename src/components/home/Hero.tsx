@@ -22,7 +22,7 @@ const Hero = () => {
     >
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
-        src="https://assets.circleandclique.com/artifacts/videos/Hero.mp4"
+        src="https://assets.circleandclique.com/artifacts/videos/Hero.webm"
         autoPlay
         loop
         muted
