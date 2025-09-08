@@ -30,7 +30,7 @@ const Benefits = () => {
               height={595}
             />
           </div>
-          <div className="md:w-1/2 mt-10 md:mt-0">
+          <div className="w-full md:w-1/2 mt-10 md:mt-0">
             <div className="flex items-center gap-1.5 mb-2 md:mb-4">
               <div className="w-2 h-2 rounded-full circo-gradient" />
               <span className="bg-clip-text text-transparent circo-gradient font-semibold text-base md:text-lg">
@@ -38,7 +38,7 @@ const Benefits = () => {
               </span>
             </div>
             <h3 className="text-[32px] md:text-5xl lg:text-[60px] leading-13 md:leading-15 lg:leading-18.5 tracking-normal text-white md:text-[#1B1B1B]">
-              Complete Creative Control to turn your passion into business
+              Complete Creative Control <br className="hidden sm:block md:hidden" /> to turn your passion into business
             </h3>
             <Button
               className="mt-7 md:mt-11"
@@ -58,15 +58,15 @@ const Benefits = () => {
               height={463}
             />
           </div>
-          <div className="md:w-1/2 md:max-w-[550px] mt-10 md:mt-0">
+          <div className="w-full md:w-1/2 md:max-w-[550px] mt-10 md:mt-0">
             <div className="flex items-center gap-1.5 mb-2 md:mb-4">
               <div className="w-2 h-2 rounded-full circo-gradient" />
               <span className="bg-clip-text text-transparent circo-gradient font-semibold text-base md:text-lg">
-                For Viewers
+                For Users
               </span>
             </div>
             <h3 className="text-[32px] md:text-5xl lg:text-[60px] leading-13 md:leading-15 lg:leading-18.5 tracking-normal text-white md:text-[#1B1B1B]">
-              Find trends, content, and topics that inspire you.
+              Find trends, content, <br className="hidden sm:block md:hidden" /> and topics that inspire you.
             </h3>
             <Button
               className="mt-7 md:mt-11"

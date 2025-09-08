@@ -18,25 +18,25 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen px-5 pb-16 flex items-end sm:items-center sm:justify-center relative overflow-hidden"
+      className="min-h-screen px-5 pb-16 flex items-end md:items-center md:justify-center relative overflow-hidden"
     >
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
-        src="https://assets.circleandclique.com/artifacts/videos/Hero.mp4"
+        src="https://assets.circleandclique.com/artifacts/videos/Hero.webm"
         autoPlay
         loop
         muted
         playsInline
       />
 
-      <div className="relative z-10 sm:text-center">
-        <h1 className="text-white text-5xl sm:text-[80px] leading-16 sm:leading-23 tracking-normal font-semibold sm:font-medium">
-          The Internet&apos;s Most Valuable Stage <br className="hidden sm:block" /> - Yours.
+      <div className="relative z-10 md:text-center">
+        <h1 className="text-white text-5xl md:text-[80px] leading-16 md:leading-23 tracking-normal font-semibold md:font-medium lg:max-w-3xl xl:max-w-none mx-auto">
+          The Internet&apos;s Most Valuable Stage <br className="hidden md:block" /> - Yours.
         </h1>
 
         <Button
           variant="secondary"
-          className="w-full sm:w-auto mt-7 sm:mt-8"
+          className="w-full md:w-auto mt-7 md:mt-8"
           onClick={handleDownload}
         >
           Download the App
