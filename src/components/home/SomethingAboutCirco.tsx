@@ -62,7 +62,7 @@ const SomethingAboutCirco = () => {
           muted
           playsInline
         />
-        <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-[90px] font-medium text-[#FCBFBF] leading-14 md:leading-28 text-center max-w-3xl mx-auto section-heading z-10">
+        <div className="absolute inset-0 flex items-center justify-center text-[42px] md:text-[90px] font-medium text-[#FCBFBF] leading-14 md:leading-28 text-center max-w-sm md:max-w-3xl mx-auto section-heading z-10">
           Something about Circo for everybody
         </div>
         <div className="absolute inset-0 bg-black opacity-40 z-5 pointer-events-none"></div>
