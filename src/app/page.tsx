@@ -8,6 +8,8 @@ import OurNumbers2 from '@/components/home/OurNumbers2';
 import Section3 from '@/components/home/Section3';
 // import SomethingAboutCirco from '@/components/home/SomethingAboutCirco';
 import AccordionSection from '@/components/home/AccordionSection';
+import CardSection from '@/components/home/CardSection';
+import CreativeControl from '@/components/home/CreativeControl';
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
       <Section3 />
       <Blog />
       <AccordionSection />
+      <CardSection />
+      <CreativeControl />
       {/* <SomethingAboutCirco />
       <Benefits /> */}
       {/* <PressRelease /> */}
