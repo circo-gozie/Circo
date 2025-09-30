@@ -62,8 +62,8 @@ const TheFooter = () => {
             <Image
               src="/images/logo.svg"
               alt="Logo"
-              width={210}
-              height={82}
+              width={200}
+              height={66}
             />
           </Link>
           <p className="text-[#E0E0E0] tracking-[-3%] mt-5 md:mt-7.5 text-xl md:text-3xl">

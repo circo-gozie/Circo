@@ -2,6 +2,7 @@
 
 import Button from '../ui/Button';
 import { scrollToDownload } from '@/utils/scrollTo';
+import { ArrowDownToLine } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 const Hero = () => {
@@ -28,18 +29,23 @@ const Hero = () => {
         muted
         playsInline
       />
-
-      <div className="relative z-10 md:text-center">
-        <h1 className="text-white text-5xl md:text-[80px] leading-16 md:leading-23 tracking-normal font-semibold md:font-medium lg:max-w-3xl xl:max-w-none mx-auto">
-          The Internet&apos;s Most Valuable Stage <br className="hidden md:block" /> - Yours.
+      <div className="relative z-10 w-full px-2 md:px-5 text-white space-y-6 md:pt-32">
+        <h1 className=" text-5xl md:text-[80px]  leading-16 md:leading-23 tracking-normal text-wrap font-semibold md:font-medium lg:max-w-3xl xl:max-w-none mx-auto">
+          The Internet&apos;s Most <br className="hidden md:block" /> Valuable Stage <br className="hidden md:block" />{' '}
+          <span className="md:hidden">- Yours.</span>
         </h1>
+
+        <p className="text-lg hidden md:block">
+          Complete Creative Control to turn your passion into business Control to <br /> turn your passion into business
+        </p>
 
         <Button
           variant="secondary"
-          className="w-full md:w-auto mt-7 md:mt-8"
+          className="max-sm:w-full"
           onClick={handleDownload}
         >
           Download the App
+          <ArrowDownToLine className="size-4 stroke-2.5" />
         </Button>
       </div>
 

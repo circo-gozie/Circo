@@ -1,6 +1,6 @@
 import { FC } from 'react';
-
-type Variant = 'primary' | 'secondary';
+import { cn } from '@/lib/utils';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'icon';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -9,14 +9,20 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<Variant, string> = {
   primary: 'circo-gradient text-white hover:bg-red-700',
-  secondary: 'bg-white text-[#1B1B1B]'
+  secondary: 'bg-white text-foreground',
+  ghost: 'bg-transparent text-foreground border',
+  icon: 'bg-transparent hover:text-primary w-fit h-fit p-0'
 };
 
 const Button: FC<ButtonProps> = ({ children, variant = 'primary', className = '', ...props }) => {
   return (
     <button
       {...props}
-      className={`cursor-pointer py-4.5 px-10 rounded-full font-semibold text-base ${variants[variant]} ${className}`}
+      className={cn(
+        'cursor-pointer py-4.5 px-10 rounded-full font-semibold text-base justify-center items-center !flex has-[svg]:gap-2 active:scale-98 transition-all',
+        `${variants[variant]}`,
+        className
+      )}
     >
       {children}
     </button>

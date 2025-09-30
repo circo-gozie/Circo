@@ -1,12 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+// import { useState } from 'react';
 import Image from 'next/image';
-import { PortableText } from '@portabletext/react';
+// import { PortableText } from '@portabletext/react';
 import { Section } from '@/types/legal';
-import { portableTextComponents } from './PortableTextComponents';
-import PolicyScrollMenu from './PolicyScrollMenu';
-import PolicyScrollSection from './PolicyScrollSection';
+// import { portableTextComponents } from './PortableTextComponents';
+// import PolicyScrollMenu from './PolicyScrollMenu';
+// import PolicyScrollSection from './PolicyScrollSection';
 
 interface LegalPageLayoutProps {
   data: Section[];
@@ -16,20 +16,21 @@ interface LegalPageLayoutProps {
   isSuccess: boolean;
 }
 
-export default function LegalPageLayout({ data, title, isLoading, hasError, isSuccess }: LegalPageLayoutProps) {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+export default function LegalPageLayout({ title, isLoading, hasError, isSuccess }: LegalPageLayoutProps) {
+  // export default function LegalPageLayout({ data, title, isLoading, hasError, isSuccess }: LegalPageLayoutProps) {
+  // const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setActiveSection(id);
-  };
+  // const scrollToSection = (id: string) => {
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  //   setActiveSection(id);
+  // };
 
-  const handleSectionInView = (id: string) => {
-    setActiveSection(id);
-  };
+  // const handleSectionInView = (id: string) => {
+  //   setActiveSection(id);
+  // };
 
   if (isLoading) {
     return (
@@ -78,7 +79,7 @@ export default function LegalPageLayout({ data, title, isLoading, hasError, isSu
               <span className="text-xl font-medium md:text-2xl lg:text-3xl">{title}</span>
             </p>
           </div>
-          <PolicyScrollSection onSectionInView={handleSectionInView}>
+          {/* <PolicyScrollSection onSectionInView={handleSectionInView}>
             {data?.map((section) => (
               <div
                 key={section._id}
@@ -95,7 +96,7 @@ export default function LegalPageLayout({ data, title, isLoading, hasError, isSu
                 />
               </div>
             ))}
-          </PolicyScrollSection>
+          </PolicyScrollSection> */}
         </div>
       </div>
     </div>

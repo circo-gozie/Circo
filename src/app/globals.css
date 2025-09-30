@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
 
 /* Fonts */
 @font-face {
@@ -51,13 +54,190 @@ body {
   .custom-li-class {
     @apply leading-relaxed;
   }
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* New Circo brand colors */
+  --color-circo-1: var(--circo-1);
+  --color-circo-3: var(--circo-3);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Light mode colors based on the provided palette */
+  --background: hsl(0 0% 100%); /* #FFFFFF */
+  --foreground: hsl(0 0% 10.6%); /* #1B1B1B */
+  --muted-foreground: hsl(0 0% 45.5%); /* #747474 */
+  --border: hsl(0 0% 45.5%);
+  --input: hsl(0 0% 45.5%);
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 10.6%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 10.6%);
 
   /* Circo brand colors */
-  .bg-circoRed2 {
-    background-color: #cd1942;
+  --circo-1: hsl(0 100% 59.2%); /* #FF2F2F */
+  --circo-3: hsl(0 96.5% 88.8%); /* #FCBFBF */
+  /* --circo-4: hsl(0 96.5% 88.8%); ##FFF9F1 */
+
+  /* Applying brand colors to semantic variables */
+  --primary: hsl(0 100% 59.2%);
+  --primary-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 100% 59.2%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  /* Other semantic colors for light mode (can be adjusted) */
+  --secondary: hsl(0 0% 96.1%);
+  --secondary-foreground: hsl(0 0% 10.6%);
+  --muted: hsl(0 0% 96.1%);
+  --accent: hsl(0 0% 96.1%);
+  --accent-foreground: hsl(0 0% 10.6%);
+  --ring: hsl(0 100% 59.2%);
+
+  /* Sidebar colors */
+  --sidebar: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(0 0% 10.6%);
+  --sidebar-primary: hsl(0 100% 59.2%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(0 0% 96.1%);
+  --sidebar-accent-foreground: hsl(0 0% 10.6%);
+  --sidebar-border: hsl(0 0% 45.5%);
+  --sidebar-ring: hsl(0 100% 59.2%);
+}
+
+.dark {
+  /* Dark mode colors based on the provided palette */
+  --background: hsl(0 0% 1.6%); /* #040404 */
+  --foreground: hsl(0 0% 100%); /* #FFFFFF */
+  --muted-foreground: hsl(0 0% 69%); /* #B0B0B0 */
+  --border: hsl(0 0% 69%);
+  --input: hsl(0 0% 69%);
+
+  --card: hsl(0 0% 1.6%);
+  --card-foreground: hsl(0 0% 100%);
+  --popover: hsl(0 0% 1.6%);
+  --popover-foreground: hsl(0 0% 100%);
+
+  /* Circo brand colors remain the same */
+  --circo-1: hsl(0 100% 59.2%);
+  --circo-3: hsl(0 96.5% 88.8%);
+
+  /* Applying brand colors to semantic variables */
+  --primary: hsl(0 100% 59.2%);
+  --primary-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 100% 59.2%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  /* Other semantic colors for dark mode (can be adjusted) */
+  --secondary: hsl(0 0% 14.9%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(0 0% 14.9%);
+  --accent: hsl(0 0% 14.9%);
+  --accent-foreground: hsl(0 0% 100%);
+  --ring: hsl(0 100% 59.2%);
+
+  /* Sidebar colors */
+  --sidebar: hsl(0 0% 1.6%);
+  --sidebar-foreground: hsl(0 0% 100%);
+  --sidebar-primary: hsl(0 100% 59.2%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(0 0% 14.9%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(0 0% 69%);
+  --sidebar-ring: hsl(0 100% 59.2%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 
-  .bg-circoRed2\/20 {
-    background-color: rgba(205, 25, 66, 0.2);
+  .circo-gradient {
+    background-image: linear-gradient(to right, #ae0c4d, #cd1942, #ff2f2f);
   }
+}
+
+.hide-scrollbar {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* Target the scrollbar pseudo-element */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Opera) */
+}
+
+@keyframes scrollY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.vid-carousel {
+  /* This ensures that all videos are stacked vertically and duplicated for looping */
+  display: flex;
+  flex-direction: column;
+}
+
+.animate-scroll {
+  animation: scrollY 20s linear infinite;
+}
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scrollX 20s linear infinite;
 }

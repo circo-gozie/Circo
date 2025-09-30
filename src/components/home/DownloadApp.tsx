@@ -16,7 +16,7 @@ const DownloadApp = () => {
       id="download"
       className="bg-black py-21 px-5"
     >
-      <div className="max-w-screen-xl mx-auto px-8 bg-[url(https://assets.circleandclique.com/artifacts/images/red-radial-bg.png)] py-21 rounded-[60px] overflow-hidden flex justify-center">
+      <div className="max-w-screen-xl mx-auto sm:px-8 bg-[url(https://assets.circleandclique.com/artifacts/images/red-radial-bg.png)] py-21 rounded-[60px] overflow-hidden flex justify-center">
         <div className="max-w-[600px] mx-auto">
           <h2 className="text-white text-[64px] leading-18 tracking-[-2%] text-center">
             Circo is where you want to be

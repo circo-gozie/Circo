@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import TheNavbar from '@/components/TheNavbar';
 import TheFooter from '@/components/TheFooter';
-import LenisProvider from '../providers/LenisProvider';
+import SmoothScrollProvider from '@/providers/SmoothScrollProvider';
 
 export const metadata: Metadata = {
   title: 'Circo - Experience Like Never Before',
@@ -42,13 +42,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        <LenisProvider>
+    <html
+      lang="en"
+      className="hide-scrollbar"
+    >
+      <body className="antialiased hide-scrollbar">
+        <SmoothScrollProvider>
           <TheNavbar />
           {children}
           <TheFooter />
-        </LenisProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

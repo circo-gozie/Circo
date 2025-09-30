@@ -1,18 +1,25 @@
-import Benefits from '@/components/home/Benefits';
+// import Benefits from '@/components/home/Benefits';
 import DownloadApp from '@/components/home/DownloadApp';
 import Hero from '@/components/home/Hero';
-import OurNumbers from '@/components/home/OurNumbers';
-import PressRelease from '@/components/home/PressRelease';
-import SomethingAboutCirco from '@/components/home/SomethingAboutCirco';
+// import OurNumbers from '@/components/home/OurNumbers';
+import Blog from '@/components/home/Blog';
+import OurNumbers2 from '@/components/home/OurNumbers2';
+// import PressRelease from '@/components/home/PressRelease';
+import Section3 from '@/components/home/Section3';
+// import SomethingAboutCirco from '@/components/home/SomethingAboutCirco';
+import AccordionSection from '@/components/home/AccordionSection';
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <OurNumbers />
-      <SomethingAboutCirco />
-      <Benefits />
-      <PressRelease />
+      <OurNumbers2 />
+      <Section3 />
+      <Blog />
+      <AccordionSection />
+      {/* <SomethingAboutCirco />
+      <Benefits /> */}
+      {/* <PressRelease /> */}
       <DownloadApp />
     </main>
   );
