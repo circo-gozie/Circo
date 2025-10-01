@@ -16,7 +16,7 @@ const Section3 = () => {
       scrollTrigger: {
         trigger: '.section-3',
         start: 'top top',
-        end: 'bottom 65%',
+        end: 'bottom 75%',
         scrub: 3,
         pin: true,
         anticipatePin: 1
@@ -30,7 +30,7 @@ const Section3 = () => {
 
   return (
     <>
-      <section className="hidden sm:flex section-3 h-svh items-center justify-center gap-22 overflow-y-scroll hide-scrollbar">
+      <section className="hidden sm:flex padding_ section-3 h-svh items-center justify-center gap-22 overflow-y-scroll hide-scrollbar">
         <div className="block-1 w-md flex flex-col items-center justify-center h-full">
           <div className="space-y-6">
             <h1 className=" text-5xl leading-14  tracking-normal text-wrap font-semibold md:font-medium lg:max-w-3xl xl:max-w-none mx-auto">
@@ -69,7 +69,7 @@ const Section3 = () => {
           </div>
         </div>
       </section>
-      <section className="sm:hidden p-4 section-3-mobile space-y-9">
+      <section className="sm:hidden padding_ section-3-mobile space-y-9">
         <div className=" w-full h-full">
           <div className="space-y-3">
             <h1 className=" text-3xl leading-10 tracking-normal text-wrap font-semibold md:font-medium lg:max-w-3xl xl:max-w-none mx-auto">

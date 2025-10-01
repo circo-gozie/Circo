@@ -54,6 +54,10 @@ body {
   .custom-li-class {
     @apply leading-relaxed;
   }
+
+  .padding_ {
+    @apply p-4 py-12 sm:px-22 sm:py-22;
+  }
 }
 
 @theme inline {
@@ -121,7 +125,7 @@ body {
   /* Applying brand colors to semantic variables */
   --primary: hsl(0 100% 59.2%);
   --primary-foreground: hsl(0 0% 100%);
-  --destructive: hsl(0 100% 59.2%);
+  --primary-accent: #fff7f7 --destructive: hsl(0 100% 59.2%);
   --destructive-foreground: hsl(0 0% 100%);
 
   /* Other semantic colors for light mode (can be adjusted) */
@@ -163,7 +167,7 @@ body {
   /* Applying brand colors to semantic variables */
   --primary: hsl(0 100% 59.2%);
   --primary-foreground: hsl(0 0% 100%);
-  --destructive: hsl(0 100% 59.2%);
+  --primary-accent: #fff7f7 --destructive: hsl(0 100% 59.2%);
   --destructive-foreground: hsl(0 0% 100%);
 
   /* Other semantic colors for dark mode (can be adjusted) */

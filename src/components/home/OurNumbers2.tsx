@@ -18,7 +18,7 @@ const OurNumbers2 = () => {
   };
 
   return (
-    <section className="our-numbers flex flex-col py-18 gap-8 bg-[#FFF9F1] items-center justify-center relative overflow-hidden section-wrapper">
+    <section className="our-numbers padding_ flex flex-col gap-8 bg-[#FFF9F1] items-center justify-center relative overflow-hidden section-wrapper">
       <div className="w-full grow text-center flex items-center justify-center">
         <p className="text-4xl mt-auto font-bold">
           We’ve helped 2,000+ <br /> creators reach their goals

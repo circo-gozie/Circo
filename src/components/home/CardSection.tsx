@@ -17,7 +17,7 @@ const cardData = [
 
 const CardSection = () => {
   return (
-    <div className="p-4 sm:px-22 space-y-12 py-12 spce-y-6">
+    <div className="padding_ space-y-12 spce-y-6 bg-gradient-to-b from-[#B3CFFE]/50 via-white to-white">
       <p className=" text-3xl sm:text-4xl sm:font-bold sm:text-start">Say Something</p>
       <div className="w-full flex flex-col sm:flex-row gap-12">
         {cardData.map((item, index) => (

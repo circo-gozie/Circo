@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen px-5 pb-16 flex items-end md:items-center md:justify-center relative overflow-hidden"
+      className="min-h-screen padding_ flex items-end md:items-center md:justify-center relative overflow-hidden"
     >
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -29,7 +29,7 @@ const Hero = () => {
         muted
         playsInline
       />
-      <div className="relative z-10 w-full px-2 md:px-5 text-white space-y-6 md:pt-32">
+      <div className="relative z-10 w-full text-white space-y-6 md:pt-32">
         <h1 className=" text-5xl md:text-[80px]  leading-16 md:leading-23 tracking-normal text-wrap font-semibold md:font-medium lg:max-w-3xl xl:max-w-none mx-auto">
           The Internet&apos;s Most <br className="hidden md:block" /> Valuable Stage <br className="hidden md:block" />{' '}
           <span className="md:hidden">- Yours.</span>
