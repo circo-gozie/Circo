@@ -17,15 +17,15 @@ const Section3 = () => {
         trigger: '.section-3',
         start: 'top top',
         end: 'bottom 75%',
-        scrub: 3,
+        scrub: 2,
         pin: true,
         anticipatePin: 1
       }
     });
 
-    tl.to('.block-1', { x: '-120%', opacity: 0, duration: 2, ease: 'sine.inOut' }, 2)
-      .to('.vid-carousel-container', { x: '-120%', duration: 2, ease: 'sine.inOut' }, 2)
-      .to('.block-2', { x: '0%', opacity: 1, duration: 2, ease: 'sine.inOut' }, 3);
+    tl.to('.block-1', { x: '-120%', opacity: 0, duration: 2, ease: 'none' }, 2)
+      .to('.vid-carousel-container', { x: '-120%', duration: 2, ease: 'none', force3D: true }, 2)
+      .to('.block-2', { x: '0%', opacity: 1, duration: 2, ease: 'none' }, 2);
   });
 
   return (
