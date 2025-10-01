@@ -14,7 +14,7 @@ const DownloadApp = () => {
   return (
     <section
       id="download"
-      className="bg-black py-21 px-5"
+      className="bg-black padding_"
     >
       <div className="max-w-screen-xl mx-auto sm:px-8 bg-[url(https://assets.circleandclique.com/artifacts/images/red-radial-bg.png)] py-21 rounded-[60px] overflow-hidden flex justify-center">
         <div className="max-w-[600px] mx-auto">

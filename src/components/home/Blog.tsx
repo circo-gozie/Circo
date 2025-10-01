@@ -15,7 +15,7 @@ const blogs = [
 
 const Blog = () => {
   return (
-    <div className="p-4 sm:px-22 space-y-12 py-12">
+    <div className="padding_ space-y-12">
       <p className="text-3xl sm:text-5xl text-center font-bold">
         Catch up on the <br className="sm:hidden" /> latest updates
       </p>

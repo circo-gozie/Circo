@@ -20,7 +20,7 @@ export const useCases: { title: string; href: string; description: string }[] = 
   },
   {
     title: 'Podcasters',
-    href: '#',
+    href: '/podcasters',
     description: 'Maximizing your access plans to suit'
   },
   {

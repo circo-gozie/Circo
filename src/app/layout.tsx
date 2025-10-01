@@ -3,6 +3,7 @@ import './globals.css';
 import TheNavbar from '@/components/TheNavbar';
 import TheFooter from '@/components/TheFooter';
 import SmoothScrollProvider from '@/providers/SmoothScrollProvider';
+import LenisProvider from '@/providers/LenisProvider';
 
 export const metadata: Metadata = {
   title: 'Circo - Experience Like Never Before',
@@ -46,12 +47,15 @@ export default function RootLayout({
       lang="en"
       className="hide-scrollbar"
     >
-      <body className="antialiased hide-scrollbar">
-        <SmoothScrollProvider>
+      <body
+        className="antialiased hide-scrollbar"
+        // suppressHydrationWarning
+      >
+        <LenisProvider>
           <TheNavbar />
           {children}
           <TheFooter />
-        </SmoothScrollProvider>
+        </LenisProvider>
       </body>
     </html>
   );

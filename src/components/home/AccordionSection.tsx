@@ -20,7 +20,7 @@ const AccordionSection = () => {
   ];
 
   return (
-    <div className="p-4 sm:px-22 space-y-12 py-12 spce-y-6">
+    <div className="padding_ space-y-6">
       <p className=" text-3xl sm:text-4xl sm:font-bold sm:text-start">FAQs</p>
 
       <Accordion
