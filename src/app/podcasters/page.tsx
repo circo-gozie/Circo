@@ -7,7 +7,7 @@ import DownloadApp from '@/components/home/DownloadApp';
 
 const Podcasters = () => {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       <Hero />
       <CardSection />
       <CreativeControl />

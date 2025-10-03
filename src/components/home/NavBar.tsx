@@ -83,9 +83,9 @@ export function NavBar() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Products</NavigationMenuTrigger>
           <NavigationMenuContent className="-translate-x-1/9">
-            <div className="inline-flex gap-4">
+            <div className="inline-flex gap-12">
               <div className="w-44 grow bg-primary/40 rounded-lg"></div>
-              <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              <ul className="grid w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {useCases.map((component) => (
                   <ListItem
                     key={component.title}
@@ -102,9 +102,9 @@ export function NavBar() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Use Cases</NavigationMenuTrigger>
           <NavigationMenuContent className="-translate-x-1/4">
-            <div className="inline-flex gap-4">
+            <div className="inline-flex gap-12">
               <div className="w-44 grow bg-teal-800 rounded-lg"></div>
-              <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              <ul className="grid w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {useCases.map((component) => (
                   <ListItem
                     key={component.title}

@@ -83,15 +83,17 @@ const TheNavbar = () => {
                 onClick={() => {
                   window.location.href = LOGIN_URL;
                 }}
-                className="py-2 px-6"
+                className=" "
               >
                 Sign In <ChevronRight className="size-3 stroke-3" />
               </Button>
               <Button
                 onClick={scrollToDownload}
-                className="py-2 px-6"
+                className=""
+                variant="primary"
               >
-                Download <ArrowDownToLine className="size-3 stroke-3" />
+                Download
+                <ArrowDownToLine className="size-3 stroke-3" />
               </Button>
             </div>
 
@@ -118,10 +120,16 @@ const TheNavbar = () => {
                     <Accordion
                       type="single"
                       collapsible
+                      className=" data-[state=open]:!bg-transparent"
                     >
-                      <AccordionItem value="products">
-                        <AccordionTrigger className="text-lg">Products</AccordionTrigger>
-                        <AccordionContent className="*:text-start space-y-2">
+                      <AccordionItem
+                        value="products"
+                        className="p-0 border-0 justify-normal data-[state=open]:!bg-transparent"
+                      >
+                        <AccordionTrigger className="text-xl !p-0 !h-fit justify-normal items-center">
+                          Products
+                        </AccordionTrigger>
+                        <AccordionContent className="*:text-start space-y-4 pt-4">
                           {' '}
                           {useCases.map((component) => (
                             <ListItem
@@ -134,9 +142,14 @@ const TheNavbar = () => {
                           ))}
                         </AccordionContent>
                       </AccordionItem>
-                      <AccordionItem value="use-cases">
-                        <AccordionTrigger className="text-lg">Use Cases</AccordionTrigger>
-                        <AccordionContent className="*:text-start space-y-2">
+                      <AccordionItem
+                        value="use-cases"
+                        className="p-0 border-0 justify-normal data-[state=open]:!bg-transparent"
+                      >
+                        <AccordionTrigger className="text-xl !p-0 !h-fit justify-normal items-center">
+                          Use Cases
+                        </AccordionTrigger>
+                        <AccordionContent className="*:text-start space-y-4 pt-4">
                           {' '}
                           {useCases.map((component) => (
                             <ListItem
@@ -151,12 +164,12 @@ const TheNavbar = () => {
                       </AccordionItem>
                     </Accordion>
 
-                    <div className="flex flex-col text-start text-lg">
+                    <div className="flex flex-col text-start text-xl">
                       {navLinks.map((item, index) => (
                         <Link
                           key={index}
                           href={item.href}
-                          className="py-2"
+                          className="py-2 text-xl font-semibold"
                         >
                           {item.title}
                         </Link>
@@ -177,6 +190,7 @@ const TheNavbar = () => {
                   <Button
                     onClick={scrollToDownload}
                     className="py-4 px-6"
+                    variant="primary"
                   >
                     Download <ArrowDownToLine className="size-3 stroke-3" />
                   </Button>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import TheNavbar from '@/components/TheNavbar';
 import TheFooter from '@/components/TheFooter';
-import SmoothScrollProvider from '@/providers/SmoothScrollProvider';
 import LenisProvider from '@/providers/LenisProvider';
 
 export const metadata: Metadata = {

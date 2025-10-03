@@ -17,7 +17,7 @@ const Section3 = () => {
         trigger: '.section-3',
         start: 'top top',
         end: 'bottom 75%',
-        scrub: 2,
+        scrub: 3,
         pin: true,
         anticipatePin: 1
       }
