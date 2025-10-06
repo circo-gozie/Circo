@@ -183,13 +183,13 @@ const TheNavbar = () => {
                     onClick={() => {
                       window.location.href = LOGIN_URL;
                     }}
-                    className="py-4 px-6"
+                    className=" w-full text-base font-semibold"
                   >
                     Sign In <ChevronRight className="size-3 stroke-3" />
                   </Button>
                   <Button
                     onClick={scrollToDownload}
-                    className="py-4 px-6"
+                    className="w-full text-base font-semibold"
                     variant="primary"
                   >
                     Download <ArrowDownToLine className="size-3 stroke-3" />

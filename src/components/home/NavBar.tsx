@@ -15,7 +15,7 @@ import {
 export const useCases: { title: string; href: string; description: string }[] = [
   {
     title: 'UGC Creators',
-    href: '#',
+    href: '/ugc',
     description: 'Maximizing your access plans to suit'
   },
   {
@@ -25,7 +25,7 @@ export const useCases: { title: string; href: string; description: string }[] = 
   },
   {
     title: 'Musicians & Performers',
-    href: '#',
+    href: '/musicians',
     description: 'Maximizing your access plans to suit'
   },
   {

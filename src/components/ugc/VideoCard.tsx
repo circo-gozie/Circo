@@ -81,7 +81,7 @@ const VideoCard = ({ video }: VideoCardProps) => {
       {/* Controls */}
       <div
         className={cn(
-          'absolute top-6 right-4 space-y-2 opacity-0 translate-x-6 translate-y-2',
+          'absolute top-6 right-4 space-y-2 opacity-0 translate-x-6 translate-y-2 flex flex-col',
           'transition-all duration-300 delay-150',
           // 👇 show on hover OR focus
           'group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0',
@@ -90,7 +90,7 @@ const VideoCard = ({ video }: VideoCardProps) => {
       >
         {/* Play / Pause */}
         <Button
-          className="bg-black/30 p-2"
+          className="bg-black/30"
           variant="icon"
           onClick={handlePlayPause}
         >
@@ -103,7 +103,7 @@ const VideoCard = ({ video }: VideoCardProps) => {
 
         {/* Mute / Unmute */}
         <Button
-          className="bg-black/30 p-2"
+          className="bg-black/30"
           variant="icon"
           onClick={handleMuteToggle}
         >

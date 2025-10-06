@@ -9,7 +9,7 @@ import VideoCard2 from './VideoCard2';
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-const Section3 = () => {
+const VideoCarousel = () => {
   useGSAP(() => {
     gsap.set('.block-2', { x: '120%', opacity: 0 });
     const tl = gsap.timeline({
@@ -113,4 +113,4 @@ const Section3 = () => {
   );
 };
 
-export default Section3;
+export default VideoCarousel;
