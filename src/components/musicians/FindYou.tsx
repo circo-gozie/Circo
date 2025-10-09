@@ -26,7 +26,10 @@ const FindYou = () => {
     const height = container.offsetHeight;
     const itemSize = items[0].offsetWidth;
 
-    const radius = (height - itemSize) / 2 - 10;
+    // Increase vertical spacing on mobile by making the track taller
+    const isMobile = window.innerWidth < 640; // sm breakpoint
+    const baseRadius = (height - itemSize) / 2 - 10;
+    const radius = isMobile ? Math.max(baseRadius, height * 0.6, 200) : baseRadius;
     const straightLength = width - 2 * radius - itemSize;
     const total = items.length;
     const perimeter = 2 * straightLength + 2 * Math.PI * radius;
@@ -86,16 +89,23 @@ const FindYou = () => {
     );
   });
 
+  // Determine how many images to show based on screen size
+  const getImagesToShow = () => {
+    if (typeof window === 'undefined') return findYouImages; // SSR fallback
+    const isMobile = window.innerWidth < 640; // sm breakpoint
+    return isMobile ? findYouImages.slice(0, 8) : findYouImages; // Show 8 images on mobile, all on desktop
+  };
+
   return (
-    <section className="find_you padding_ sm:min-h-svh flex flex-col gap-8 items-center justify-center relative overflow-hidden section-wrapper">
+    <section className="find_you padding_ sm:min-h-svh flex flex-col gap-8 items-center justify-center relative section-wrapper">
       <div
         ref={containerRef}
-        className="relative size-full grow flex items-center justify-center overflow-hidden"
+        className="sm:relative size-full grow flex items-center justify-center"
       >
-        {findYouImages.map((img, index) => (
+        {getImagesToShow().map((img, index) => (
           <div
             key={index}
-            className="track-item size-22 aspect-square rounded-xl overflow-hidden opacity-0" // stays hidden until GSAP animates
+            className="track-item size-12 sm:size-22 aspect-square rounded-xl overflow-hidden opacity-0" // stays hidden until GSAP animates
           >
             <Image
               src={img}
@@ -107,11 +117,13 @@ const FindYou = () => {
           </div>
         ))}
 
-        <p className="absolute text-center text-7xl font-bold pointer-events-none">
+        <p className="text-center max-sm:px-12 text-6xl sm:text-7xl sm:font-bold pointer-events-none">
           Where your new <br />
           favorites find you.
         </p>
       </div>
+
+      <div className=""></div>
     </section>
   );
 };
