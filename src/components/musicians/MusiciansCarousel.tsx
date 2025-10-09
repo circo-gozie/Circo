@@ -20,16 +20,15 @@ const MusiciansCarousel = () => {
       y: 0,
       ease: 'power2.out',
       stagger: {
-        amount: 2, // total spread time for all items
-        // from: 'random', // random order
-        each: 0.15 // slight offset between starts
+        amount: 2,
+        each: 0.15
       }
     });
   });
   return (
     <section className="m_carousel_ padding_ flex flex-col gap-8 items-center justify-center relative overflow-hidden section-wrapper">
       <div className="w-full  grow flex items-center justify-center overflow-x-scroll hide-scrollbar">
-        <div className="w-full grow flex sm:grid grid-cols-4 gap-8">
+        <div className="w-full grow flex flex-col sm:grid grid-cols-4 gap-8">
           {musiciansCarousel.map((_) => (
             <div
               key={_.title}
@@ -37,7 +36,7 @@ const MusiciansCarousel = () => {
             >
               <p className="text-lg font-bold">{_.title}</p>
               <p className="">{_.description}</p>
-              <div className="w-full aspect-[9/13] rounded-2xl bg-gray-100 mt-4"></div>
+              <div className="w-full aspect-square sm:aspect-[9/13] rounded-2xl bg-gray-100 mt-4"></div>
             </div>
           ))}
         </div>
